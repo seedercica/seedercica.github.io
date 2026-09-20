@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嘛哩嘛哩-热带风情与自然风光的摄影展示平台</title>
+    <meta name="description" content="嘛哩嘛哩是一个专注于热带风情、自然风光与人文摄影的在线展示平台。在这里发现令人心醉的椰林海浪、探索神秘的雨林秘境，感受异域文化的独特魅力，获取专业的旅行摄影技巧与拍摄指南。">
+    <meta name="keywords" content="嘛哩嘛哩,摄影,旅行,热带风光,自然风光,旅游摄影">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #00897b;
+            --secondary-color: #26a69a;
+            --accent-color: #ff7043;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text-sub);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 500px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/seed/tropical1/1920/1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 32px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(255, 112, 67, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            background-color: #f4511e;
+            box-shadow: 0 6px 20px rgba(255, 112, 67, 0.6);
+        }
+
+        /* 分类导航 */
+        .category-nav {
+            background-color: var(--card-bg);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .category-list {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .category-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-sub);
+            font-weight: 500;
+            cursor: pointer;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: var(--transition);
+        }
+
+        .category-item:hover, .category-item.active {
+            background-color: rgba(0, 137, 123, 0.1);
+            color: var(--primary-color);
+        }
+
+        .category-icon {
+            font-size: 1.2rem;
+        }
+
+        /* 主要内容区 */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 2rem;
+            padding-bottom: 4rem;
+        }
+
+        /* 瀑布流展示 */
+        .gallery-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .photo-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .card-content {
+            padding: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+        }
+
+        .card-tag {
+            background-color: rgba(0, 137, 123, 0.1);
+            color: var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* 侧边栏 */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .widget {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .widget h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        .popular-list li {
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 0.8rem;
+        }
+
+        .popular-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .popular-list a {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .popular-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .hot-tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background-color: #f0f2f5;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* 专题区域 */
+        .featured-section {
+            margin-top: 3rem;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .featured-card {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 300px;
+            cursor: pointer;
+        }
+
+        .featured-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .featured-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .featured-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 20px;
+            color: white;
+        }
+
+        .featured-overlay h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .featured-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #263238;
+            color: #eceff1;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: #b0bec5;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #37474f;
+            color: #78909c;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none; /* 简化处理，移动端隐藏菜单 */
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>🌴</span> 嘛哩嘛哩
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">摄影图库</a>
+                <a href="#">旅行攻略</a>
+                <a href="#">器材评测</a>
+                <a href="#">关于我们</a>
+            </nav>
+            <button class="search-btn">🔍</button>
+        </div>
+    </header>
+
+    <section class="category-nav">
+        <div class="container">
+            <ul class="category-list">
+                <li class="category-item active">
+                    <span class="category-icon">🔥</span> 热门推荐
+                </li>
+                <li class="category-item">
+                    <span class="category-icon">🌊</span> 热带海滩
+                </li>
+                <li class="category-item">
+                    <span class="category-icon">🌲</span> 森林探险
+                </li>
+                <li class="category-item">
+                    <span class="category-icon">🏙️</span> 城市人文
+                </li>
+                <li class="category-item">
+                    <span class="category-icon">🌅</span> 日落黄昏
+                </li>
+                <li class="category-item">
+                    <span class="category-icon">🦜</span> 野生动物
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>捕捉世界的色彩与律动</h1>
+            <p>嘛哩嘛哩汇聚全球摄影师的精彩瞬间，带您领略热带风情与自然奇观的无限魅力。</p>
+            <a href="#gallery" class="cta-button">开始探索</a>
+        </div>
+    </section>
+
+    <main class="container main-content" id="gallery">
+        <!-- 瀑布流图库 -->
+        <section class="gallery-section">
+            <h2>最新精选摄影</h2>
+            <div class="gallery-grid">
+                <!-- 卡片 1 -->
+                <article class="photo-card">
+                    <img src="https://picsum.photos/seed/p1/400/300" alt="热带雨林晨雾" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">雨林深处的晨雾</h3>
+                        <div class="card-meta">
+                            <span class="card-tag">自然风光</span>
+                            <span>1.2k 次浏览</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 卡片 2 -->
+                <article class="photo-card">
+                    <img src="https://picsum.photos/seed/p2/400/500" alt="蓝色海岸线" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">帕劳的蓝色海岸</h3>
+                        <div class="card-meta">
+                            <span class="card-tag">海洋摄影</span>
+                            <span>856 次浏览</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 卡片 3 -->
+                <article class="photo-card">
+                    <img src="https://picsum.photos/seed/p3/400/350" alt="古城日落" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">清迈古城的落日余晖</h3>
+                        <div class="card-meta">
+                            <span class="card-tag">人文纪实</span>
+                            <span>2.1k 次浏览</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 卡片 4 -->
+                <article class="photo-card">
+                    <img src="https://picsum.photos/seed/p4/400/400" alt="热带水果" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">热带水果特写</h3>
+                        <div class="card-meta">
+                            <span class="card-tag">微距摄影</span>
+                            <span>543 次浏览</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 卡片 5 -->
+                <article class="photo-card">
+                    <img src="https://picsum.photos/seed/p5/400/450" alt="瀑布飞流" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">安达曼海的飞瀑</h3>
+                        <div class="card-meta">
+                            <span class="card-tag">自然风光</span>
+                            <span>1.8k 次浏览</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 卡片 6 -->
+                <article class="photo-card">
+                    <img src="https://picsum.photos/seed/p6/400/320" alt="海岛日落" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">巴厘岛的浪漫日落</h3>
+                        <div class="card-meta">
+                            <span class="card-tag">旅行摄影</span>
+                            <span>3.4k 次浏览</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 侧边栏 -->
+        <aside>
+            <div class="widget">
+                <h3>热门话题</h3>
+                <div class="hot-tag-cloud">
+                    <a href="#" class="tag">#年度最佳摄影</a>
+                    <a href="#" class="tag">#胶片感</a>
+                    <a href="#" class="tag">#小众旅行地</a>
+                    <a href="#" class="tag">#风光大片</a>
+                    <a href="#" class="tag">#胶片感</a>
+                </div>
+            </div>
+
+            <div class="widget">
+                <h3>本周热门榜单</h3>
+                <ul class="popular-list">
+                    <li>
+                        <a href="#">2024年最佳旅行目的地推荐</a>
+                        <span>🔥 1.2w</span>
+                    </li>
+                    <li>
+                        <a href="#">如何拍摄出具有电影感的风景照？</a>
+                        <span>🔥 9.8k</span>
+                    </li>
+                    <li>
+                        <a href="#">尼康Z8新手拍摄指南</a>
+                        <span>🔥 8.5k</span>
+                    </li>
+                    <li>
+                        <a href="#">夏季防晒摄影装备清单</a>
+                        <span>🔥 6.2k</span>
+                    </li>
+                    <li>
+                        <a href="#">日本京都摄影攻略</a>
+                        <span>🔥 5.1k</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3>摄影师专栏</h3>
+                <div style="text-align: center;">
+                    <img src="https://picsum.photos/seed/photographer/150/150" alt="摄影师头像" style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 10px;">
+                    <h4 style="font-size: 1rem; margin-bottom: 5px;">光影行者</h4>
+                    <p style="font-size: 0.85rem; color: #666; margin-bottom: 10px;">专注于风光与人文纪实摄影</p>
+                    <a href="#" style="font-size: 0.85rem; color: var(--primary-color);">查看更多作品 →</a>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- 专题展示 -->
+    <section class="container featured-section">
+        <h2>专题策划：热带雨林的呼唤</h2>
+        <div class="featured-grid">
+            <div class="featured-card">
+                <img src="https://picsum.photos/seed/feat1/600/400" alt="雨林植物">
+                <div class="featured-overlay">
+                    <h3>植物百科</h3>
+                    <p>探索雨林中奇特的植物群落</p>
+                </div>
+            </div>
+            <div class="featured-card">
+                <img src="https://picsum.photos/seed/feat2/600/400" alt="丛林动物">
+                <div class="featured-overlay">
+                    <h3>野生动物</h3>
+                    <p>记录丛林中的生灵瞬间</p>
+                </div>
+            </div>
+            <div class="featured-card">
+                <img src="https://picsum.photos/seed/feat3/600/400" alt="探险装备">
+                <div class="featured-overlay">
+                    <h3>探险装备</h3>
+                    <p>深入丛林必备的摄影器材</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于嘛哩嘛哩</h4>
+                    <p style="color: #b0bec5; font-size: 0.9rem; line-height: 1.8;">
+                        嘛哩嘛哩致力于为摄影爱好者和旅行者提供一个高质量的视觉分享平台。我们相信，每一张照片背后都有一个动人的故事。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">摄影技巧</a></li>
+                        <li><a href="#">器材评测</a></li>
+                        <li><a href="#">旅行攻略</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门分类</h4>
+                    <ul>
+                        <li><a href="#">自然风光</a></li>
+                        <li><a href="#">城市建筑</a></li>
+                        <li><a href="#">人像摄影</a></li>
+                        <li><a href="#">街拍</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">合作咨询</a></li>
+                        <li><a href="#">加入社区</a></li>
+                        <li><a href="#">反馈建议</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 嘛哩嘛哩 版权所有. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
