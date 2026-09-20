@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="与我同眠 - 专业助眠音乐与白噪音平台。提供深度睡眠音乐、自然环境音、冥想引导及助眠故事，帮助您改善睡眠质量，缓解失眠焦虑，享受宁静夜晚。">
+    <meta name="keywords" content="与我同眠, 助眠音乐, 白噪音, 深度睡眠, 失眠治疗, 冥想引导, 潮汐音">
+    <title>与我同眠 - 深度睡眠与白噪音助眠指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #6c5ce7;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --text-light: #999999;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 32px;
+            --radius: 12px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-md) var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: #5b4cc4;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            padding: 80px 20px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+            color: #2d3436;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #444;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(108, 92, 231, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Content Section */
+        .content-section {
+            background-color: white;
+            padding: 60px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .layout-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .audio-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .audio-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: var(--radius);
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .audio-item:hover {
+            background-color: white;
+            box-shadow: var(--shadow);
+            border-color: rgba(108, 92, 231, 0.2);
+        }
+
+        .play-btn {
+            width: 48px;
+            height: 48px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .audio-info {
+            flex-grow: 1;
+        }
+
+        .audio-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 4px;
+        }
+
+        .audio-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .duration {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-left: 10px;
+        }
+
+        /* Sidebar */
+        aside {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .sidebar-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .sidebar-card h3 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .category-list li {
+            margin-bottom: 10px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            padding: 8px 0;
+            transition: var(--transition);
+        }
+
+        .category-list a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .category-list span.count {
+            background-color: #eee;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 20px;
+            background-color: #f8f9fa;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            padding-left: 20px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .layout-grid {
+                grid-template-columns: 1fr;
+            }
+
+            aside {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                与我同眠
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#sounds">白噪音</a></li>
+                    <li><a href="#stories">助眠故事</a></li>
+                    <li><a href="#guide">睡眠指南</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn-primary">开启晚安</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>今晚，与我同眠</h1>
+                <p>精选深度助眠音乐、自然白噪音与冥想引导，为您打造沉浸式睡眠体验，找回久违的深度睡眠。</p>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="#sounds" class="btn-primary" style="background: white; color: var(--accent-color);">开始聆听</a>
+                    <a href="#guide" style="background: rgba(255,255,255,0.2); color: white; padding: 10px 24px; border-radius: 30px; font-weight: 600;">查看睡眠指南</a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>10万+</h3>
+                        <p>精选音效</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>500万+</h3>
+                        <p>用户信赖</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>95%</h3>
+                        <p>助眠有效率</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features" id="sounds">
+            <div class="section-header">
+                <h2>为什么选择与我同眠</h2>
+                <p>科学的声音频率，专业的音频制作，为您缓解失眠焦虑</p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+                    </div>
+                    <h3>深度白噪音</h3>
+                    <p>涵盖雨声、海浪、篝火、森林等多种自然声音，通过白噪音效应掩盖环境干扰，助您快速入眠。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                    </div>
+                    <h3>专业音频库</h3>
+                    <p>由专业录音师采集制作，采用高保真采样，确保声音纯净自然，无杂音干扰。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.74 5.74c1.07 1.07 1.07 2.83 0 3.9L12 22.31 6.26 16.55c-1.07-1.07-1.07-2.83 0-3.9L12 2.69z"></path></svg>
+                    </div>
+                    <h3>冥想与引导</h3>
+                    <p>提供专业的睡眠冥想引导音频，帮助您放松身心，调整呼吸节奏，进入放松状态。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Area -->
+        <section class="content-section" id="stories">
+            <div class="container">
+                <div class="section-header">
+                    <h2>热门助眠音单</h2>
+                    <p>根据不同需求为您推荐的最佳助眠方案</p>
+                </div>
+
+                <div class="layout-grid">
+                    <!-- Main List -->
+                    <div class="audio-list">
+                        <div class="audio-item">
+                            <div class="play-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                            <div class="audio-info">
+                                <div class="audio-title">深夜雨夜 - 持续循环版</div>
+                                <div class="audio-meta">自然白噪音 · 深度睡眠 · 2小时</div>
+                            </div>
+                            <div class="duration">2:00:00</div>
+                        </div>
+
+                        <div class="audio-item">
+                            <div class="play-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                            <div class="audio-info">
+                                <div class="audio-title">森林晨露 - 治愈系白噪音</div>
+                                <div class="audio-meta">自然白噪音 · 轻松助眠 · 1小时30分</div>
+                            </div>
+                            <div class="duration">1:30:00</div>
+                        </div>
+
+                        <div class="audio-item">
+                            <div class="play-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                            <div class="audio-info">
+                                <div class="audio-title">身体扫描冥想 - 入睡前引导</div>
+                                <div class="audio-meta">冥想引导 · 放松训练 · 30分钟</div>
+                            </div>
+                            <div class="duration">30:00</div>
+                        </div>
+
+                        <div class="audio-item">
+                            <div class="play-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                            <div class="audio-info">
+                                <div class="audio-title">海浪拍岸 - 宽频白噪音</div>
+                                <div class="audio-meta">自然白噪音 · 专注与睡眠 · 3小时</div>
+                            </div>
+                            <div class="duration">3:00:00</div>
+                        </div>
+
+                        <div class="audio-item">
+                            <div class="play-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                            <div class="audio-info">
+                                <div class="audio-title">暖炉壁炉 - 温馨陪伴音</div>
+                                <div class="audio-meta">环境音 · 温暖舒适 · 2小时15分</div>
+                            </div>
+                            <div class="duration">2:15:00</div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <aside>
+                        <div class="sidebar-card">
+                            <h3>音效分类</h3>
+                            <ul class="category-list">
+                                <li><a href="#">🌧️ 下雨声 <span class="count">120</span></a></li>
+                                <li><a href="#">🌊 海浪声 <span class="count">85</span></a></li>
+                                <li><a href="#">🌲 森林鸟鸣 <span class="count">45</span></a></li>
+                                <li><a href="#">🔥 篝火声 <span class="count">30</span></a></li>
+                                <li><a href="#">💨 风声 <span class="count">60</span></a></li>
+                                <li><a href="#">☕ 咖啡馆背景音 <span class="count">22</span></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <h3>助眠工具</h3>
+                            <ul class="category-list">
+                                <li><a href="#">🌙 睡眠计时器</a></li>
+                                <li><a href="#">⏱️ 呼吸练习</a></li>
+                                <li><a href="#">🧘 睡前瑜伽</a></li>
+                                <li><a href="#">🛌 睡眠监测</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="guide">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                    <p>关于助眠与白噪音的常见疑问</p>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        听白噪音会影响听力吗？
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        只要音量控制在舒适范围内（通常不超过50-60分贝），使用白噪音助眠是安全的。建议在睡前将音量调至最低，既能掩盖干扰又能保护听力。
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        什么时候听白噪音效果最好？
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        最好在睡前30-60分钟开始播放。声音可以帮助您放松身体，建立入睡的心理暗示，并掩盖环境中的突发噪音。
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        如果我醒来听到声音会怎样？
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        如果声音让您感到烦躁，请尝试寻找更柔和的音源（如雨声或海浪声）或调整音量。部分用户发现，持续的低频白噪音反而有助于再次入睡。
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 20px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <span>与我同眠</span>
+                </div>
+                <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                    致力于为全球用户提供高品质的睡眠辅助音频，让每一个夜晚都宁静美好。
+                </p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>探索</h4>
+                <ul>
+                    <li><a href="#">最新音单</a></li>
+                    <li><a href="#">热门榜单</a></li>
+                    <li><a href="#">助眠日记</a></li>
+                    <li><a href="#">社区分享</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>帮助</h4>
+                <ul>
+                    <li><a href="#">使用指南</a></li>
+                    <li><a href="#">常见问题</a></li>
+                    <li><a href="#">联系客服</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>关于</h4>
+                <ul>
+                    <li><a href="#">我们的故事</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">合作伙伴</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 与我同眠. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+      </html>
