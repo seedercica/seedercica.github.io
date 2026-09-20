@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="冒险岛双刀任务流程详细攻略。包含双刀觉醒前置任务、转职任务、觉醒任务全流程步骤、所需等级、NPC位置及注意事项，助你快速掌握双刀玩法。">
+    <meta name="keywords" content="冒险岛双刀任务流程,冒险岛双刀转职,冒险岛双刀觉醒,冒险岛双刀攻略">
+    <title>冒险岛双刀任务流程-详细转职与觉醒攻略指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #1a252f 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* 主内容区 */
+        main {
+            padding-bottom: 60px;
+        }
+
+        /* 通用区块样式 */
+        section {
+            margin-bottom: 50px;
+        }
+
+        .section-header {
+            margin-bottom: 25px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+        }
+
+        /* 任务流程卡片 */
+        .task-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .task-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.2s;
+            border: 1px solid #eee;
+        }
+
+        .task-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .task-header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .task-level {
+            background-color: var(--accent-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .task-body {
+            padding: 20px;
+        }
+
+        .task-step {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .task-step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .step-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .step-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .npc-tag {
+            display: inline-block;
+            background-color: #e8f4fd;
+            color: var(--primary-color);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        /* 提示框 */
+        .tip-box {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+
+        .tip-box h4 {
+            color: #856404;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .tip-box p {
+            font-size: 0.95rem;
+            color: #856404;
+        }
+
+        /* 常见问题 */
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background-color: #fff;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--secondary-color);
+            color: #bdc3c7;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .task-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">冒险岛<span>攻略</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">职业攻略</a></li>
+                    <li><a href="#">技能树</a></li>
+                    <li><a href="#">装备推荐</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1>冒险岛双刀任务流程</h1>
+            <p>从转职到觉醒的完整指南，助你高效通关，掌握双刀核心玩法。</p>
+        </div>
+    </div>
+
+    <main class="container">
+        
+        <!-- 觉醒前置任务 -->
+        <section id="awakening">
+            <div class="section-header">
+                <h2 class="section-title">双刀觉醒前置任务流程</h2>
+            </div>
+            <div class="task-grid">
+                <!-- 任务卡片 1 -->
+                <article class="task-card">
+                    <div class="task-header">
+                        <span>第一阶段：凯梅尔兹</span>
+                        <span class="task-level">Lv.120</span>
+                    </div>
+                    <div class="task-body">
+                        <div class="task-step">
+                            <span class="step-title">1. 前往凯梅尔兹帝国</span>
+                            <p class="step-desc">前往埃德尔雷斯大陆的凯梅尔兹帝国，与NPC <span class="npc-tag">奥利维亚</span> 对话接取任务。</p>
+                        </div>
+                        <div class="task-step">
+                            <span class="step-title">2. 收集材料</span>
+                            <p class="step-desc">前往艾尔帕兰，收集 <span class="npc-tag">黑暗之眼碎片</span> 和 <span class="npc-tag">双刀的证明</span>。通常需要击杀特定的精英怪。</p>
+                        </div>
+                        <div class="task-step">
+                            <span class="step-title">3. 完成委托</span>
+                            <p class="step-desc">返回凯梅尔兹，将材料交给 <span class="npc-tag">奥利维亚</span>，完成第一阶段对话。</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 任务卡片 2 -->
+                <article class="task-card">
+                    <div class="task-header">
+                        <span>第二阶段：卡伦</span>
+                        <span class="task-level">Lv.120</span>
+                    </div>
+                    <div class="task-body">
+                        <div class="task-step">
+                            <span class="step-title">1. 前往卡伦</span>
+                            <p class="step-desc">前往赫里希安村，与 <span class="npc-tag">卡伦</span> 对话。</p>
+                        </div>
+                        <div class="task-step">
+                            <span class="step-title">2. 挑战试炼</span>
+                            <p class="step-desc">进入试炼场，击败指定的怪物。注意观察提示，有些阶段可能需要使用特定技能。</p>
+                        </div>
+                        <div class="task-step">
+                            <span class="step-title">3. 获得认可</span>
+                            <p class="step-desc">通过试炼后，与 <span class="npc-tag">卡伦</span> 再次对话，领取双刀觉醒武器。</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="tip-box">
+                <h4>⚠️ 注意事项</h4>
+                <p>双刀觉醒需要达到120级。前置任务会消耗大量时间和材料，建议提前准备好药水。觉醒后双刀将获得新的被动技能和外观变化。</p>
+            </div>
+        </section>
+
+        <!-- 转职任务 -->
+        <section id="transformation">
+            <div class="section-header">
+                <h2 class="section-title">双刀转职任务流程</h2>
+            </div>
+            <div class="task-grid">
+                <article class="task-card">
+                    <div class="task-header">
+                        <span>第一阶段：影武士</span>
+                        <span class="task-level">Lv.70</span>
+                    </div>
+                    <div class="task-body">
+                        <div class="task-step">
+                            <span class="step-title">1. 领取任务</span>
+                            <p class="step-desc">在勇士部落找 <span class="npc-tag">萨乌塔</span> 领取转职任务。</p>
+                        </div>
+                        <div class="task-step">
+                            <span class="step-title">2. 收集物品</span>
+                            <p class="step-desc">前往艾琳，收集 <span class="npc-tag">影子之石</span> 和 <span class="npc-tag">龙之牙</span>。</p>
+                        </div>
+                        <div class="task-step">
+                            <span class="step-title">3. 前往埃德尔雷斯</span>
+                            <p class="step-desc">前往埃德尔雷斯，找 <span class="npc-tag">奥利维亚</span> 完成最终考核。</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="task-card">
+                    <div class="task-header">
+                        <span>第二阶段：双刀</span>
+                        <span class="task-level">Lv.70</span>
+                    </div>
+                    <div class="task-body">
+                        <div class="task-step">
+                            <span class="step-title">1. 前往卡伦</span>
+                            <p class="step-desc">前往赫里希安村，找 <span class="npc-tag">卡伦</span> 对话。</p>
+                        </div>
+                        <div class="task-step">
+                            <span class="step-title">2. 最终试炼</span>
+                            <p class="step-desc">在试炼场中击败副本BOSS，证明你的实力。</p>
+                        </div>
+                        <div class="task-step">
+                            <span class="step-title">3. 转职成功</span>
+                            <p class="step-desc">成功转职为双刀，获得新技能“双刀精通”。</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section id="faq">
+            <div class="section-header">
+                <h2 class="section-title">常见问题解答</h2>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">双刀转职需要什么前置条件？</div>
+                <div class="faq-answer">
+                    双刀转职需要将影武士转职，并且等级达到70级。影武士转职需要完成勇士部落的系列任务。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">觉醒任务很难吗？</div>
+                <div class="faq-answer">
+                    觉醒任务主要考验的是装备和操作。前期阶段主要是收集材料，后期试炼需要一定的输出能力，建议准备高属性的武器。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">哪里可以找到卡伦？</div>
+                <div class="faq-answer">
+                    卡伦位于埃德尔雷斯大陆的赫里希安村。可以通过埃德尔雷斯大陆的传送阵前往。
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 冒险岛双刀攻略网 - 专注游戏资讯与任务流程整理</p>
+            <p>本站内容仅供参考，游戏版权归Nexon所有。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ折叠逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
