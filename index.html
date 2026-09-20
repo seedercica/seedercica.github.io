@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>终极拳皇-经典格斗游戏全攻略与怀旧重温指南</title>
+    <meta name="description" content="终极拳皇专题页，提供拳皇系列游戏下载、角色图鉴、必杀技连招教学、街机模拟器配置指南及怀旧赛事资讯。">
+    <meta name="keywords" content="终极拳皇,拳皇,格斗游戏,街机模拟,拳皇97,拳皇14,连招教学,角色图鉴">
+    <style>
+        :root {
+            --primary: #ffcc00;
+            --primary-dark: #e6b800;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --text-main: #f0f0f0;
+            --text-muted: #a0a0a0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--primary);
+            padding-left: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--secondary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--secondary);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 2px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/kof/1920/1080.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-tags {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .hero-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+        }
+
+        /* Character Grid */
+        .characters {
+            padding: 4rem 0;
+        }
+
+        .char-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .char-card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .char-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .char-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            filter: grayscale(20%);
+            transition: filter 0.3s;
+        }
+
+        .char-card:hover .char-img {
+            filter: grayscale(0%);
+        }
+
+        .char-info {
+            padding: 1rem;
+        }
+
+        .char-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .char-title {
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+
+        /* Game Versions */
+        .versions {
+            background-color: #1a1a1a;
+            padding: 4rem 0;
+        }
+
+        .version-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .version-card {
+            background: var(--bg-card);
+            border: 1px solid #333;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .version-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .version-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .version-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .version-desc {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .version-stats {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .stat-item {
+            background: rgba(255,255,255,0.05);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+        }
+
+        /* Guides Section */
+        .guides {
+            padding: 4rem 0;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .guide-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .guide-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(255, 204, 0, 0.1);
+            line-height: 1;
+        }
+
+        .guide-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .guide-content p {
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 3rem 0;
+            border-top: 1px solid #333;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--text-main);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">KOF<span>ULTIMATE</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#versions">游戏版本</a></li>
+                    <li><a href="#characters">人气角色</a></li>
+                    <li><a href="#guides">新手攻略</a></li>
+                    <li><a href="#community">街机社区</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>终极拳皇</h1>
+                <p>重温街机黄金时代，体验最纯粹的格斗快感。从拳皇94到拳皇15，跨越三十年的格斗传奇。</p>
+                <div class="btn-group">
+                    <a href="#versions" class="btn btn-primary">开始游戏</a>
+                    <a href="#guides" class="btn btn-outline">学习连招</a>
+                </div>
+                <div class="hero-tags">
+                    <span class="hero-tag">#拳皇97</span>
+                    <span class="hero-tag">#街机模拟</span>
+                    <span class="hero-tag">#格斗教学</span>
+                    <span class="hero-tag">#怀旧</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Versions Section -->
+        <section id="versions" class="versions">
+            <div class="container">
+                <h2 class="section-title">经典版本回顾</h2>
+                <div class="version-list">
+                    <article class="version-card">
+                        <div class="version-header">
+                            <div class="version-icon">97</div>
+                            <div class="version-title">拳皇97</div>
+                        </div>
+                        <p class="version-desc">格斗游戏历史上的巅峰之作，超必杀觉醒系统确立了整个系列的战斗框架，至今仍是竞技场的常青树。</p>
+                        <div class="version-stats">
+                            <span class="stat-item">3D建模</span>
+                            <span class="stat-item">4人组队</span>
+                            <span class="stat-item">PS2/PC</span>
+                        </div>
+                        <a href="#" class="btn btn-outline" style="width: 100%">查看详情</a>
+                    </article>
+
+                    <article class="version-card">
+                        <div class="version-header">
+                            <div class="version-icon">98</div>
+                            <div class="version-title">拳皇98</div>
+                        </div>
+                        <p class="version-desc">无限制版，汇集了所有系列的人气角色，被玩家公认为最完美的平衡之作，适合新手与高手。</p>
+                        <div class="version-stats">
+                            <span class="stat-item">全角色</span>
+                            <span class="stat-item">平衡性</span>
+                            <span class="stat-item">街机厅</span>
+                        </div>
+                        <a href="#" class="btn btn-outline" style="width: 100%">查看详情</a>
+                    </article>
+
+                    <article class="version-card">
+                        <div class="version-header">
+                            <div class="version-icon">15</div>
+                            <div class="version-title">拳皇15</div>
+                        </div>
+                        <p class="version-desc">系列正统续作，采用3D建模与2D战斗结合，引入了EX攻击和终极觉醒系统，画面更加细腻。</p>
+                        <div class="version-stats">
+                            <span class="stat-item">3D画面</span>
+                            <span class="stat-item">线上对战</span>
+                            <span class="stat-item">Steam</span>
+                        </div>
+                        <a href="#" class="btn btn-outline" style="width: 100%">查看详情</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Character Showcase -->
+        <section id="characters" class="characters">
+            <div class="container">
+                <h2 class="section-title">人气角色图鉴</h2>
+                <div class="char-grid">
+                    <!-- Using picsum with seeds to simulate character images -->
+                    <article class="char-card">
+                        <img src="https://picsum.photos/seed/kof1/400/500" alt="八神庵" class="char-img">
+                        <div class="char-info">
+                            <div class="char-name">八神庵</div>
+                            <div class="char-title">饿狼传说组</div>
+                        </div>
+                    </article>
+                    <article class="char-card">
+                        <img src="https://picsum.photos/seed/kof2/400/500" alt="草薙京" class="char-img">
+                        <div class="char-info">
+                            <div class="char-name">草薙京</div>
+                            <div class="char-title">KOF主角</div>
+                        </div>
+                    </article>
+                    <article class="char-card">
+                        <img src="https://picsum.photos/seed/kof3/400/500" alt="不知火舞" class="char-img">
+                        <div class="char-info">
+                            <div class="char-name">不知火舞</div>
+                            <div class="char-title">超必杀忍蜂</div>
+                        </div>
+                    </article>
+                    <article class="char-card">
+                        <img src="https://picsum.photos/seed/kof4/400/500" alt="特瑞" class="char-img">
+                        <div class="char-info">
+                            <div class="char-name">特瑞·博加德</div>
+                            <div class="char-title">能量喷泉</div>
+                        </div>
+                    </article>
+                    <article class="char-card">
+                        <img src="https://picsum.photos/seed/kof5/400/500" alt="K' (K-Dash)" class="char-img">
+                        <div class="char-info">
+                            <div class="char-name">K'</div>
+                            <div class="char-title">K-Dash</div>
+                        </div>
+                    </article>
+                    <article class="char-card">
+                        <img src="https://picsum.photos/seed/kof6/400/500" alt="卢卡尔·伯恩斯坦" class="char-img">
+                        <div class="char-info">
+                            <div class="char-name">卢卡尔</div>
+                            <div class="char-title">最终BOSS</div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guides Section -->
+        <section id="guides" class="guides">
+            <div class="container">
+                <h2 class="section-title">格斗新手指南</h2>
+                <div class="guide-grid">
+                    <div class="guide-item">
+                        <div class="guide-number">01</div>
+                        <div class="guide-content">
+                            <h3>理解帧数与判定</h3>
+                            <p>在终极拳皇中，了解攻击帧、受击帧和无敌帧是进阶的关键。学会观察对手动作，把握反击时机。</p>
+                        </div>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-number">02</div>
+                        <div class="guide-content">
+                            <h3>必杀技输入规范</h3>
+                            <p>掌握斜下轻脚输入（↓↘→+轻脚）等标准指令。不同版本（如拳皇97与拳皇14）的输入延迟可能不同。</p>
+                        </div>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-number">03</div>
+                        <div class="guide-content">
+                            <h3>连招与取消技巧</h3>
+                            <p>利用普通技或特殊技的硬直进行取消，从而打出高伤害的连段。例如：前冲重脚接升龙拳。</p>
+                        </div>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-number">04</div>
+                        <div class="guide-content">
+                            <h3>团队连携与援护</h3>
+                            <p>在3对3模式中，合理利用第三角色的援护技能打断对手节奏，或作为终结技的辅助。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Simulator Section -->
+        <section class="versions" style="background-color: #151515;">
+            <div class="container">
+                <h2 class="section-title">模拟器与下载</h2>
+                <div class="version-list">
+                    <article class="version-card">
+                        <div class="version-header">
+                            <div class="version-icon">NEBULA</div>
+                            <div class="version-title">Nebula 模拟器</div>
+                        </div>
+                        <p class="version-desc">兼容性极佳的街机模拟器，支持MAME和NeoGeo平台，画面优化出色，适合PC端运行拳皇系列。</p>
+                        <a href="#" class="btn btn-primary">下载客户端</a>
+                    </article>
+                    <article class="version-card">
+                        <div class="version-header">
+                            <div class="version-icon">MAME</div>
+                            <div class="version-title">MAME 模拟器</div>
+                        </div>
+                        <p class="version-desc">开源街机模拟器核心，能够运行绝大多数老式街机游戏，包括早期的拳皇版本。</p>
+                        <a href="#" class="btn btn-primary">获取ROM包</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col" style="flex: 2; min-width: 300px;">
+                    <div class="logo">KOF<span>ULTIMATE</span></div>
+                    <p style="color: #666; margin-top: 1rem; max-width: 500px;">
+                        致力于为格斗游戏爱好者提供最全面的游戏资料、攻略分享及怀旧资讯。我们尊重版权，仅提供技术讨论与资源指引。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">游戏下载</a></li>
+                        <li><a href="#">角色图鉴</a></li>
+                        <li><a href="#">赛事资讯</a></li>
+                        <li><a href="#">硬件推荐</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>社区支持</h4>
+                    <ul>
+                        <li><a href="#">玩家论坛</a></li>
+                        <li><a href="#">连招讨论</a></li>
+                        <li><a href="#">BUG反馈</a></li>
+                        <li><a href="#">赞助支持</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 KOF Ultimate Fan Page. All rights reserved. 本站为非营利性粉丝站点，仅供交流学习使用。
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+                          </html>
