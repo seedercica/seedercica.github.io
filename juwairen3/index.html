@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="《局外人3》最新资讯、剧情解析、人物关系梳理及在线阅读指南。深度剖析荒诞派文学经典续作，提供正版资源推荐与读者评论。">
+    <meta name="keywords" content="局外人3, 荒诞派文学, 加缪, 漫画, 小说, 阅读指南">
+    <title>局外人3-荒诞派文学经典续作深度解析与阅读指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --bg-color: #f4f6f7;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --spacing-unit: 16px;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 32px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .cta-button:hover {
+            background-color: #a93226;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content Grid */
+        .main-content {
+            padding: 40px 0;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        /* Article Section */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 32px;
+            transition: var(--transition);
+        }
+
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 300px;
+            background-color: #ddd;
+            object-fit: cover;
+        }
+
+        .article-body {
+            padding: 24px;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            display: flex;
+            gap: 16px;
+        }
+
+        .article-title {
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .article-excerpt {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            color: var(--accent-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .read-more::after {
+            content: '→';
+            margin-left: 6px;
+            transition: margin-left 0.2s;
+        }
+
+        .read-more:hover::after {
+            margin-left: 10px;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 24px;
+        }
+
+        .widget-title {
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .ranking-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .ranking-list li:last-child {
+            border-bottom: none;
+        }
+
+        .rank-number {
+            background: #eee;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #666;
+        }
+
+        .rank-number.top-1 { background: var(--accent-color); color: white; }
+        .rank-number.top-2 { background: #e67e22; color: white; }
+        .rank-number.top-3 { background: #f1c40f; color: #333; }
+
+        .rank-link {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Tags */
+        .tags-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #f0f2f5;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            margin-top: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            padding-left: 4px;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col p, .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">文学<span>视界</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">经典原著</a></li>
+                    <li><a href="#">深度解析</a></li>
+                    <li><a href="#">阅读社区</a></li>
+                    <li><a href="#">相关作品</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">☰</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>局外人3：荒诞与救赎的终章</h1>
+            <p>深入探索阿尔贝·加缪哲学思想在续作中的延伸，剖析默尔索面对荒诞世界的最终抉择与精神升华。</p>
+            <a href="#content" class="cta-button">开始阅读指南</a>
+        </div>
+    </section>
+
+    <main class="container main-content" id="content">
+        <!-- Main Articles -->
+        <section class="content-area">
+            <div class="section-title">
+                <span>最新深度解读</span>
+                <a href="#" style="font-size: 0.9rem; color: var(--accent-color);">查看全部 →</a>
+            </div>
+
+            <article class="article-card">
+                <img src="https://picsum.photos/seed/absurd/800/400" alt="荒诞派文学封面示意图" class="article-image">
+                <div class="article-body">
+                    <div class="article-meta">
+                        <span>2023-10-24</span>
+                        <span>文学评论</span>
+                        <span>阅读时间 5分钟</span>
+                    </div>
+                    <h2 class="article-title">《局外人3》中的“荒诞”哲学：从沉默到反抗</h2>
+                    <p class="article-excerpt">
+                        在《局外人3》中，主角默尔索不再仅仅是冷漠的旁观者，而是开始尝试理解社会规则背后的荒诞本质。本文将详细剖析文本中隐含的加缪存在主义思想，探讨主人公如何通过“接受”命运来完成自我救赎。
+                    </p>
+                    <a href="#" class="read-more">阅读全文</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <img src="https://picsum.photos/seed/society/800/400" alt="社会隐喻示意图" class="article-image">
+                <div class="article-body">
+                    <div class="article-meta">
+                        <span>2023-10-22</span>
+                        <span>人物分析</span>
+                        <span>阅读时间 4分钟</span>
+                    </div>
+                    <h2 class="article-title">默尔索形象的重构：被误解的清醒者</h2>
+                    <p class="article-excerpt">
+                        社会舆论往往将默尔索视为冷血的杀人犯，但在《局外人3》的续写视角下，我们看到了一个试图在非理性世界中保持理性底线的灵魂。这种“清醒”在浑浊的社会中反而成了最大的罪过。
+                    </p>
+                    <a href="#" class="read-more">阅读全文</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <img src="https://picsum.photos/seed/sun/800/400" alt="阳光与阴影示意图" class="article-image">
+                <div class="article-body">
+                    <div class="article-meta">
+                        <span>2023-10-18</span>
+                        <span>主题探讨</span>
+                        <span>阅读时间 6分钟</span>
+                    </div>
+                    <h2 class="article-title">光影象征：阳光作为贯穿全作的叙事线索</h2>
+                    <p class="article-excerpt">
+                        阳光在原著中多次出现，象征着不可抗拒的命运和世界的客观冷漠。在《局外人3》的续作中，这种光影意象被进一步强化，成为推动剧情发展和人物心理变化的关键隐喻。
+                    </p>
+                    <a href="#" class="read-more">阅读全文</a>
+                </div>
+            </article>
+        </section>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-widget">
+                <h3 class="widget-title">阅读推荐</h3>
+                <ul class="ranking-list">
+                    <li>
+                        <span class="rank-number top-1">1</span>
+                        <a href="#" class="rank-link">局外人3：加缪手稿补遗</a>
+                    </li>
+                    <li>
+                        <span class="rank-number top-2">2</span>
+                        <a href="#" class="rank-link">荒诞派文学入门指南</a>
+                    </li>
+                    <li>
+                        <span class="rank-number top-3">3</span>
+                        <a href="#" class="rank-link">西西弗神话：存在主义基石</a>
+                    </li>
+                    <li>
+                        <span class="rank-number">4</span>
+                        <a href="#" class="rank-link">局外人电影改编对比</a>
+                    </li>
+                    <li>
+                        <span class="rank-number">5</span>
+                        <a href="#" class="rank-link">现代人的精神困境</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">热门标签</h3>
+                <div class="tags-cloud">
+                    <a href="#" class="tag">存在主义</a>
+                    <a href="#" class="tag">荒诞</a>
+                    <a href="#" class="tag">加缪</a>
+                    <a href="#" class="tag">默尔索</a>
+                    <a href="#" class="tag">文学经典</a>
+                    <a href="#" class="tag">哲学思考</a>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">关于《局外人3》</h3>
+                <p style="font-size: 0.9rem; color: #666; line-height: 1.6;">
+                    《局外人3》并非阿尔贝·加缪生前正式出版的续作，而是基于原著精神、评论界研究及同人创作构建的深度阅读与解析平台。本站致力于为读者提供一个探讨“世界荒诞性”与“人的自由意志”的交流空间。
+                </p>
+            </div>
+        </aside>
+    </main>
+
+    <section class="container faq-section">
+        <h2 class="section-title" style="border-bottom: none; margin-bottom: 30px;">常见问题解答</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                《局外人3》是加缪写的吗？
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                目前学术界和出版界并没有公认的《局外人3》正式文本。通常提到的“局外人3”可能指代对原著的深度续写、评论集的延伸，或者是基于原著人物背景的再创作小说。本站内容基于对原著哲学思想的延伸探讨。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                阅读原著对理解续作重要吗？
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                非常重要。《局外人3》的深度解析完全建立在阿尔贝·加缪原著《局外人》的情节、人物性格及核心哲学思想之上。不了解默尔索的“冷漠”与“反抗”，将无法理解续作中的精神演变。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                在哪里可以找到正版资源？
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                建议访问正规书店或电子书平台搜索“局外人”原著。对于同人续作或深度解析类文章，请关注本站或相关文学评论专栏，支持正版内容创作。
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col" style="flex: 2; min-width: 300px;">
+                    <h4>文学视界</h4>
+                    <p>致力于推广世界经典文学与现代哲学思考，为读者提供深度的阅读体验与思想碰撞的平台。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <a href="#">关于我们</a>
+                    <a href="#">投稿指南</a>
+                    <a href="#">版权声明</a>
+                    <a href="#">联系方式</a>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <a href="#">微信公众号</a>
+                    <a href="#">微博话题</a>
+                    <a href="#">豆瓣小组</a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 文学视界 | 仅供学习与交流使用，非官方出版物
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 手风琴效果
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // 移动端菜单切换
+        const mobileBtn = document.querySelector('.mobile-menu-btn');
+        const navUl = document.querySelector('nav ul');
+
+        mobileBtn.addEventListener('click', () => {
+            if (navUl.style.display === 'flex') {
+                navUl.style.display = 'none';
+            } else {
+                navUl.style.display = 'flex';
+                navUl.style.flexDirection = 'column';
+                navUl.style.position = 'absolute';
+                navUl.style.top = '70px';
+                navUl.style.left = '0';
+                navUl.style.width = '100%';
+                navUl.style.background = 'white';
+                navUl.style.padding = '20px';
+                navUl.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
